@@ -26,17 +26,32 @@ void reverse(char *word, int length) {
 	char *topptr = newWord;
 
 	//reverse the first half of the word
-	for (int i = length / 2 - 1; i >= 0; i--) {
-		*topptr = *(word + i);
-		topptr = topptr + 1;
+	if ((length - 1) % 2 == 0) {
+		for (int i = length / 2 - 1; i >= 0; i--) {
+			*topptr = *(word + i);
+			topptr = topptr + 1;
+		}
+
+		//*topptr = char[length / 2]
+
+		//reverse the second half
+		for (int i = length - 2; i > length / 2 - 1; i--) {
+			*topptr = *(word + i);
+			topptr = topptr + 1;
+		}
 	}
-
-	//*topptr = char[length / 2]
-
-	//reverse the second half
-	for (int i = length - 2; i > length / 2 - 1; i--) {
-		*topptr = *(word + i);
+	else {
+		length = length - 1;
+		for (int i = length / 2 - 1; i >= 0; i--) {
+			*topptr = *(word + i);
+			topptr = topptr + 1;
+		}
+		*(topptr) = *(word + length / 2);
 		topptr = topptr + 1;
+		for (int i = length - 1; i >= length / 2 + 1; i--) {
+			*topptr = *(word + i);
+			topptr = topptr + 1;
+		}
 	}
 
 	*topptr = '\0';
