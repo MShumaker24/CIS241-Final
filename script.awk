@@ -1,8 +1,8 @@
 BEGIN {
 	FS=","
 	}
-$3 <= 3 && NR != 1 {
-	sum += $2
+$4 <= 3 && NR != 1 {
+	sum += $3
 	smallCount+=1
 }
 END {
