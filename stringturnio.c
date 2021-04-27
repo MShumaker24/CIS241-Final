@@ -32,7 +32,6 @@ void reverse(char *word, int length) {
 	}
 
 	//*topptr = char[length / 2]
-	printf("%p %p\n", topptr, newWord + length / 2);
 
 	//reverse the second half
 	for (int i = length - 2; i > length / 2 - 1; i--) {
