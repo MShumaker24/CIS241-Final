@@ -26,19 +26,21 @@ void reverse(char *word, int length) {
 	char *topptr = newWord;
 
 	//reverse the first half of the word
-	for (int i = length / 2 - 1; i > 0; i--) {
+	for (int i = length / 2 - 1; i >= 0; i--) {
 		*topptr = *(word + i);
 		topptr = topptr + 1;
 	}
 
 	//*topptr = char[length / 2]
-	
+	printf("%p %p\n", topptr, newWord + length / 2);
+
 	//reverse the second half
-	for (int i = length; i > length / 2; i--) {
+	for (int i = length - 2; i > length / 2 - 1; i--) {
 		*topptr = *(word + i);
 		topptr = topptr + 1;
 	}
 
+	*topptr = '\0';
 	/*
 	for (int i = 0; i < length; i++) {
 		printf("%s", newWord[i]);
